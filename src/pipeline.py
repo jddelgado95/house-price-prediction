@@ -91,6 +91,7 @@ def main():
 
     # Step 6: Saves the trained model to disk.
     save_model(model, "model/house_price_model.pkl")
+    save_model(scaler, "model/scaler.pkl")
 
 #This ensures the script runs the pipeline only when executed directly, not when imported as a module.
 if __name__ == "__main__":
