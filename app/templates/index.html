@@ -1,0 +1,30 @@
+<!-- app/templates/index.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>House Price Predictor</title>
+  </head>
+  <body>
+    <h1>🏠 House Price Prediction</h1>
+    <form method="POST" action="/predict">
+      <label>Overall Quality:</label><br />
+      <input type="number" name="OverallQual" required /><br />
+
+      <label>Living Area (GrLivArea):</label><br />
+      <input type="number" name="GrLivArea" required /><br />
+
+      <label>Garage Cars:</label><br />
+      <input type="number" name="GarageCars" required /><br />
+
+      <label>Total Basement SF:</label><br />
+      <input type="number" name="TotalBsmtSF" required /><br /><br />
+
+      <input type="submit" value="Predict Price" />
+    </form>
+
+    {% if prediction %}
+    <h2>Predicted Price: ${{ prediction }}</h2>
+    {% endif %}
+  </body>
+</html>
