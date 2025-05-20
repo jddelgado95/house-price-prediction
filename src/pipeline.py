@@ -11,8 +11,10 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 #os: for handling file paths and directories.
 import os
+##joblib: to save the trained model.
+import joblib
 #import functions from utils
-from src.utils import load_data, preprocess_data, save_model
+from utils import load_data, preprocess_data, save_model
 
 #Initializes and trains a Linear Regression model on the training data.
 def train_model(X_train, y_train):
