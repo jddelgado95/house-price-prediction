@@ -1,8 +1,4 @@
-# src/pipeline.py
 
-#pandas, numpy: for data manipulation.
-import pandas as pd
-import numpy as np
 #matplotlib, seaborn: for data visualization.
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -13,34 +9,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 #mean_squared_error, r2_score: performance metrics.
 from sklearn.metrics import mean_squared_error, r2_score
-#StandardScaler: feature normalization.
-from sklearn.preprocessing import StandardScaler
-#joblib: to save the trained model.
-import joblib
 #os: for handling file paths and directories.
 import os
-
-#Reads a CSV file from the data/ folder into a pandas DataFrame
-def load_data(filepath):
-    df = pd.read_csv(filepath)
-    return df
-
-#Selects features + target from the DataFrame.
-def preprocess_data(df, features, target):
-    #Drops missing rows (to simplify the model).
-    df = df[features + [target]].dropna()
-    #X: feature matrix; y: target (house prices).
-    X = df[features]
-    y = df[target]
-    
-    scaler = StandardScaler()
-    #Standardizes the features using StandardScaler (mean = 0, std = 1).
-    X_scaled = scaler.fit_transform(X)
-    #Returns:
-        #X_scaled: the normalized features
-        #y: target values
-        #scaler: in case you want to reuse it later (e.g. in production)
-    return X_scaled, y, scaler
+#import functions from utils
+from src.utils import load_data, preprocess_data, save_model
 
 #Initializes and trains a Linear Regression model on the training data.
 def train_model(X_train, y_train):
