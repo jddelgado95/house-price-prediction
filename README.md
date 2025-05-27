@@ -11,8 +11,12 @@ A simple regression model to predict house prices based on features like size, q
 
 ## How to run
 
+Run a virtual environment:
+
 ```bash
-$ Run a virtual environment:
+$ pip install virtualenv
+$ python -m venv venv_name
+$ source venv/bin/activate
 ```
 
 ### Run requirements:
