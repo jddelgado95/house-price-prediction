@@ -9,36 +9,57 @@ A simple regression model to predict house prices based on features like size, q
 - matplotlib, seaborn
 - flask
 
-## how to run
+## How to run
 
+```bash
 $ Run a virtual environment:
+```
 
-Run requirements:
+### Run requirements:
+
+```bash
 $ pip install -r requirements.txt
+```
 
-Train the model:
+### Train the model:
+
+```bash
 $ python3 src/pipeline.py
+```
 
 You should see these two files with the model and the scaler:
+
+```bash
 -rw-r--r-- 1 house_price_model.pkl
 -rw-r--r-- 1 scaler.pkl
+```
 
 Run the Flask web app:
+
+```bash
 PYTHONPATH=. python3 app/app.py
+```
 
-Running on http://127.0.0.1:5000
+Running on `http://127.0.0.1:5000`
 
-If you want to avoid using the PYTHONPATH variable, you could make the project a package by adding an **init**.py file:
+If you want to avoid using the PYTHONPATH variable, you could make the project a package by adding an `__init__.py` file:
 
-$touch src/**init**.py
+```bash
+$touch src/__init__.py
+```
 
-To get the train.csv data, you should:
+## Get the train data:
+
+To get the `train.csv` data, you should:
 
 1. Log in to Kaggle (create a free account if you don't have one).
 2. Go to the dataset link above.
 3. Click the "Download All" button.
 4. Unzip the file and locate train.csv.
 5. Move train.csv into the project’s data/ folder:
+
+```bash
    house-price-prediction/
    ├── data/
    │ └── train.csv //put it here
+```
